@@ -85,8 +85,35 @@ $ n \leq{15}$
     \label{tab:time_complexity}
 \end{table}
 
-
 \chapter{Getting Started}
+
+\section{Insertion Sort}
+
+The following is a Python implementation of the insertion sort algorithm. This code demonstrates the basic structure and functionality of insertion sort:
+
+\begin{verbatim}
+def insertion_sort(arr):
+    """Perform insertion sort on the given array.
+    Input: arr - A list of comparable elements
+    Output: The same list, sorted in ascending order
+    Time complexity: O(n^2), Space complexity: O(1)"""
+    for j in range(1, len(arr)):
+        key, i = arr[j], j - 1
+        while i >= 0 and arr[i] > key:
+            arr[i+1] = arr[i]
+            i -= 1
+        arr[i+1] = key
+    return arr
+
+def main():
+    test_array = [5, 2, 4, 6, 1, 3]
+    print("Original array:", test_array)
+    sorted_array = insertion_sort(test_array)
+    print("Sorted array:", sorted_array)
+
+if __name__ == "__main__":
+    main()
+\end{verbatim}
 
 
 
